@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import axios from 'axios';
 
 function Home({ products }) {
-  console.log(products);
   // useEffect(() => {
   //   getProducts();
   // }, []);
