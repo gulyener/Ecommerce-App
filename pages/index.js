@@ -1,19 +1,9 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
+import ProductList from '../components/Index/ProductList';
 
 function Home({ products }) {
-  console.log(products);
-  // useEffect(() => {
-  //   getProducts();
-  // }, []);
-
-  // const getProducts = async () => {
-  //   const url = 'http://localhost:3000/api/products';
-  //   const response = await axios.get(url);
-  //   console.log(response.data);
-  // };
-
-  return <>home</>;
+  return <ProductList products={products} />;
 }
 
 // Instead of using useEffect, we can get initial data before component mounts with next js
