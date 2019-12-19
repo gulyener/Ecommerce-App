@@ -23,7 +23,7 @@ function Header() {
         <Link href="/">
           <Menu.Item header active={isActive('/')}>
             <Image size="mini" src="/static/logo.svg" style={{ marginRight: '1em' }} />
-            ReactReserve
+            Home
           </Menu.Item>
         </Link>
         <Link href="/cart">
