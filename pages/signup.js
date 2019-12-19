@@ -35,7 +35,7 @@ function Signup() {
       const response = await axios.post(url, payload);
       handleLogin(response.data);
     } catch (error) {
-      catchErrors(error);
+      catchErrors(error, setError);
     } finally {
       setLoading(false);
     }
