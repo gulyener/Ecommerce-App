@@ -28,19 +28,23 @@ async function handleGetRequest(req, res) {
 
 async function handlePostRequest(req, res) {
   const { name, price, description, mediaUrl } = req.body;
+  try {
+    if (!name || !price || !description || !mediaUrl) {
+      return res.status(422).send('Product missing one or more fields');
+    }
 
-  if (!name || !price || !description || !mediaUrl) {
-    return res.status(422).send('Product missing one or more fields');
+    const product = await new Product({
+      name,
+      price,
+      description,
+      mediaUrl,
+    }).save();
+
+    res.status(201).json(product);
+  } catch (error) {
+    console.log(error);
+    res.status(500).send('Server error in creating product');
   }
-
-  const product = await new Product({
-    name,
-    price,
-    description,
-    mediaUrl,
-  }).save();
-
-  res.status(201).json(product);
 }
 
 async function handleDeleteRequest(req, res) {
