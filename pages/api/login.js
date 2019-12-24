@@ -28,7 +28,8 @@ export default async (req, res) => {
     } else {
       res.status(401).send('Passwords do not match');
     }
-  } catch (error) {}
-  console.log(error);
-  res.status(500).send('Error logging in user');
+  } catch (error) {
+    console.log(error);
+    res.status(500).send('Error logging in user');
+  }
 };
