@@ -6,7 +6,9 @@ export default async (req, res) => {
     const { userId } = jwt.verify(req.headers.authorization, process.env.JWT_SECRET);
 
     // Get all users except root user
-    const users = await User.find({ _id: { $ne: userId } });
+    const users = await User.find({ _id: { $ne: userId } }).sort({
+      role: 'asc',
+    });
 
     res.status(200).json(users);
   } catch (error) {

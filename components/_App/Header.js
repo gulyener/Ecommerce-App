@@ -57,6 +57,9 @@ function Header({ user }) {
               <Icon name="sign out" size="large" />
               Logout
             </Menu.Item>
+            <Menu.Item header size="small">
+              You are logged in as {user.name}
+            </Menu.Item>
           </>
         ) : (
           <>
