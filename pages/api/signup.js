@@ -36,7 +36,6 @@ export default async (req, res) => {
       email,
       password: hash,
     }).save();
-    console.log({ newUser });
 
     // 5. Create cart for new user
     await new Cart({ user: newUser._id }).save();

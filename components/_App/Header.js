@@ -1,4 +1,4 @@
-import { Menu, Container, Image, Icon } from 'semantic-ui-react';
+import { Menu, Container, Image, Icon, Label } from 'semantic-ui-react';
 import Link from 'next/link';
 import Router, { useRouter } from 'next/router';
 import NProgress from 'nprogress';
@@ -49,6 +49,7 @@ function Header({ user }) {
             <Link href="/account">
               <Menu.Item header active={isActive('/account')}>
                 <Icon name="user" size="large" />
+                <Label attached="top right">Hello, {user.name}</Label>
                 Account
               </Menu.Item>
             </Link>
@@ -56,9 +57,6 @@ function Header({ user }) {
             <Menu.Item onClick={handleLogout} header>
               <Icon name="sign out" size="large" />
               Logout
-            </Menu.Item>
-            <Menu.Item header size="small">
-              You are logged in as {user.name}
             </Menu.Item>
           </>
         ) : (
