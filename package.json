@@ -10,6 +10,7 @@
   },
   "keywords": [],
   "author": "",
+  "repository": "https://github.com/gulyener/Ecommerce-App",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.0",
