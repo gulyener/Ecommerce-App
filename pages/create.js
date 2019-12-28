@@ -36,7 +36,11 @@ function CreateProduct() {
     data.append('file', product.media);
     data.append('upload_preset', 'ecommerce-app');
     data.append('cloud_name', 'dxsn3whop');
-    const response = await axios.post(process.env.CLOUDINARY_URL, data);
+    // Change process.env.CLOUDINARY_URL with https://api.cloudinary.com/v1_1/dxsn3whop/image/upload
+    const response = await axios.post(
+      'https://api.cloudinary.com/v1_1/dxsn3whop/image/upload',
+      data,
+    );
     const mediaUrl = response.data.url;
     return mediaUrl;
   };
