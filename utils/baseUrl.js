@@ -1,4 +1,4 @@
 const baseUrl =
-  process.env.NODE_ENV === 'production' ? 'https://ecommerceapp.now.sh' : 'http://localhost:3000';
+  process.env.NODE_ENV === 'production' ? 'https://ecommerce-app.now.sh' : 'http://localhost:3000';
 
 export default baseUrl;
