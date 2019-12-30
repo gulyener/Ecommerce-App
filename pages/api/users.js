@@ -1,6 +1,8 @@
 import User from '../../models/User';
 import jwt from 'jsonwebtoken';
 
+connectDb();
+
 export default async (req, res) => {
   try {
     const { userId } = jwt.verify(req.headers.authorization, process.env.JWT_SECRET);
